@@ -1,0 +1,45 @@
+{
+  "name": "shiki-language-lyric",
+  "version": "0.0.0",
+  "description": "Lyric language support for Shiki",
+  "keywords": [
+    "shiki",
+    "language",
+    "lyric"
+  ],
+  "author": "KazariEX",
+  "repository": "KazariEX/shiki-language-lyric",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "syntaxes"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsup-node --watch",
+    "release": "bumpp --no-push -c \"release: v%s\"",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@types/node": "^22.7.4",
+    "@zinkawaii/eslint-config": "^0.1.7",
+    "bumpp": "^9.6.1",
+    "eslint": "^9.11.1",
+    "shiki": "^1.21.0",
+    "tsup": "^8.3.0",
+    "vitest": "^2.1.2"
+  }
+}
