@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createHighlighterCore, createOnigurumaEngine } from "shiki";
+import { createHighlighterCore, createJavaScriptRegexEngine } from "shiki";
 import theme from "shiki/themes/one-dark-pro.mjs";
 import { expect, it } from "vitest";
 import grammar from "../src";
@@ -12,7 +12,7 @@ it(grammar.name, async () => {
     const highlighter = await createHighlighterCore({
         themes: [theme],
         langs: [grammar],
-        engine: createOnigurumaEngine(() => import("@shikijs/core/wasm-inlined"))
+        engine: createJavaScriptRegexEngine()
     });
 
     try {
